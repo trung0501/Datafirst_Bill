@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Chuade3",
+    "\\Chuade3\\App_Data",
+    "\\Chuade3\\App_Start",
+    "\\Chuade3\\Controllers",
+    "\\Chuade3\\Models",
+    "\\Chuade3\\Views",
+    "\\Chuade3\\Views\\HoaDons",
+    "\\Chuade3\\Views\\Home",
+    "\\Chuade3\\Views\\KhachHangs"
+  ],
+  "SelectedNode": "\\Chuade3\\Models\\DataInitializer.cs",
+  "PreviewInSolutionExplorer": false
+}

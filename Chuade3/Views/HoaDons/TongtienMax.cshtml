@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Khách Hàng Có Tổng Thành Tiền Lớn Nhất";
+}
+<h1>Khách Hàng Có Tổng Thành Tiền Lớn Nhất</h1>
+@if (ViewBag.MaKH != null)
+{
+    <div>
+        <p><strong>Mã khách hàng:</strong> @ViewBag.MaKH</p>
+        <p><strong>Họ tên:</strong> @ViewBag.Hoten</p>
+        <p><strong>Tổng thành tiền của tất cả hóa đơn:</strong> @ViewBag.Tongtien.ToString("C")</p>
+    </div>
+}
+else
+{
+    <p>không có  KH có tổng thành tiền lớn nhất.</p>
+}

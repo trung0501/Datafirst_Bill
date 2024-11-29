@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Trang Chủ";
+}
+<h1>Tìm kiếm hoá đơn khách hàng</h1>
+
+@using (Html.BeginForm("Timkiem", "HoaDons", FormMethod.Post))
+{
+    @Html.Label("Chọn tên KH cần tìm kiếm: ")   
+    @Html.DropDownList("MaKH",(IEnumerable<SelectListItem>)ViewBag.KhachHangs,new { @class = "form-control" })
+    <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+}
+@if (ViewBag.dshd != null)
+{
+    <h2>Danh Sách Hóa Đơn</h2>
+    <table class="table table-bordered">       
+            <tr>
+                <th>Ngày Lập Hóa Đơn</th>
+                <th>Tên Sản Phẩm</th>
+                <th>Đơn Giá</th>
+                <th>Số Lượng</th>
+                <th>Thành tiền</th>
+            </tr>    
+        @foreach (var hd in ViewBag.dshd as List<Chuade3.Models.HoaDon>)
+            {
+                <tr>
+                    <td>@hd.Ngaylap.ToString("dd/MM/yyyy")</td>
+                    <td>@hd.TenSP</td>
+                    <td>@hd.Dongia.ToString("C")</td>
+                    <td>@hd.Soluong</td>
+                    <td>@hd.ThanhTien.ToString("C")</td>
+                </tr>
+            }      
+    </table>
+}

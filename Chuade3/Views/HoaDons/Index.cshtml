@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Chuade3.Models.HoaDon>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>DANH SÁCH HOÁ ĐƠN</h2>
+<p>
+    @Html.ActionLink("Create", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaKH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenSP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KhachHang.Hoten)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ngaylap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dongia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Soluong)
+        </th>
+        <th>Thành tiền </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaKH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KhachHang.Hoten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ngaylap)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dongia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Soluong)
+            </td>
+            <td>
+                @item.ThanhTien.ToString("C")
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { MaKH = item.MaKH, TenSP = item.TenSP }) |
+                @Html.ActionLink("Details", "Details", new { MaKH = item.MaKH, TenSP = item.TenSP }) |
+                @Html.ActionLink("Delete", "Delete", new { MaKH = item.MaKH, TenSP = item.TenSP })
+            </td>
+        </tr>
+    }
+
+</table>
